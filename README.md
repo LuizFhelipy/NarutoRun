@@ -1,4 +1,4 @@
-# Naruto-Game
+# Naruto Run
 ### Jogo feito em canvas e javascript como trabalho de Técnicas de Programação IV
 
 ```
