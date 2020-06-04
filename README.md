@@ -8,5 +8,5 @@ Possui conceitos importantes para criação e desenvolvimento de jogos utilizand
 ### Link do Projeto
 https://github.com/LuizFhelipy/NarutoRun.git
 
-### Feito por:
+### Copyright ©
 Luiz Fhelipy Rodrigues Teixeira e Gabriel Ricieri Martines Ribeiro
