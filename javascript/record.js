@@ -8,6 +8,10 @@ record ={
 	desenha:function(){
 		ctx.fillStyle = this.color
 		ctx.font      = this.font
-		ctx.fillText("Record:"+this.record, this.x, this.y)
+		if(this.record == null){
+			ctx.fillText("Record:0", this.x, this.y)
+		}else {
+			ctx.fillText("Record:"+this.record, this.x, this.y)
+		}
 	},
 }
