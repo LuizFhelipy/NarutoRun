@@ -21,6 +21,7 @@
 		<script src="javascript/chao.js" ></script>
 		<script src="javascript/score.js" ></script>
 		<script src="javascript/pedras.js" ></script>
+		<script src="javascript/record.js" ></script>
 	</head>
 
 	<body>
@@ -68,6 +69,11 @@
 				ALTURA = window.innerHeight
 				createCanvas()
 				estadoAtual = estados.jogar
+				record.value = localStorage.getItem("record")
+
+				if(record.value == null)
+					record = 0;
+
 				roda()
 			}
 
@@ -97,12 +103,17 @@
 			{
 				bg.desenha(0,0)
 				score.desenha()
-
+				record.desenha()
 				if(estadoAtual == estados.jogar){
 					inicio.desenha(LARGURA/2 - (inicio.largura/2), ALTURA/2 - (inicio.altura/2))
 				}
 				else if(estadoAtual == estados.perdeu){
 					spriteGameover.desenha(LARGURA/2 - (spriteGameover.largura/2), ALTURA/2 - (spriteGameover.altura/2))
+					if(score.value > record){
+						localStorage.setItem("record",score.value)
+						record.value = score.value
+						record.translate()
+					}
 					score.translate()
 				}
 				else if(estadoAtual == estados.jogando){

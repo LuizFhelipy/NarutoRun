@@ -1,7 +1,7 @@
 score ={
 	x:30,
 	y:68,
-	color: "#fff",
+	color: "#000",
 	font: "50px Arial",
 	value:0,
 
@@ -15,7 +15,7 @@ score ={
 		ctx.save()
 		ctx.translate(LARGURA/2, ALTURA/2)
 		ctx.fillStyle = this.color
-		ctx.fillText(this.value, -13, 19)
+		ctx.fillText("Pontuação:"+this.value, -120, -150)
 		ctx.restore()
 	},
 
