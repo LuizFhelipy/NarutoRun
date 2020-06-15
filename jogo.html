@@ -109,7 +109,7 @@
 				}
 				else if(estadoAtual == estados.perdeu){
 					spriteGameover.desenha(LARGURA/2 - (spriteGameover.largura/2), ALTURA/2 - (spriteGameover.altura/2))
-					if(score.value > record){
+					if(score.value > record.value){
 						localStorage.setItem("record",score.value)
 						record.value = score.value
 						record.translate()
