@@ -21,12 +21,11 @@
 		<script src="javascript/chao.js" ></script>
 		<script src="javascript/score.js" ></script>
 		<script src="javascript/pedras.js" ></script>
-		<script src="javascript/record.js" ></script>
 	</head>
 
 	<body>
 		<script>
-			var canvas, ctx, ALTURA, LARGURA, velocidade=9, estadoAtual
+			var canvas, ctx, ALTURA, LARGURA, velocidade=9, estadoAtual,record
 
 			let estados ={
 				jogar:0,
@@ -69,10 +68,10 @@
 				ALTURA = window.innerHeight
 				createCanvas()
 				estadoAtual = estados.jogar
-				record.value = localStorage.getItem("record")
+				record = localStorage.getItem("record")
 
-				if(record.value == null)
-					record.value = 0;
+				if(record == null)
+					record = 0;
 
 				roda()
 			}
@@ -103,16 +102,17 @@
 			{
 				bg.desenha(0,0)
 				score.desenha()
-				record.desenha()
+				ctx.fillStyle = "#000"
+				ctx.font = "50px Arial"
+				ctx.fillText("Record:"+record, 30, 130)
 				if(estadoAtual == estados.jogar){
 					inicio.desenha(LARGURA/2 - (inicio.largura/2), ALTURA/2 - (inicio.altura/2))
 				}
 				else if(estadoAtual == estados.perdeu){
 					spriteGameover.desenha(LARGURA/2 - (spriteGameover.largura/2), ALTURA/2 - (spriteGameover.altura/2))
-					if(score.value > record.value){
+					if(score.value > this.record){
 						localStorage.setItem("record",score.value)
-						record.value = score.value
-						record.translate()
+						record = score.value
 					}
 					score.translate()
 				}
