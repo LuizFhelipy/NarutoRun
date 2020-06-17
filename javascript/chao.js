@@ -1,7 +1,7 @@
 chao = {
 	y: window.innerHeight,
 	altura: 5,
-	cor:"#30f91d",
+	cor:"#F5F5DC",
 
 	desenha:function(){
 		if(score.value > 10) this.cor="#5e9bf9"

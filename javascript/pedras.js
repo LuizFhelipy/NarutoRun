@@ -28,10 +28,19 @@ pedras = {
 			obs.x -= velocidade
 
 			//colisão naruto com obstaculo
-			if( naruto.x < obs.x + spritePedras.largura && naruto.x + naruto.largura >= obs.x && naruto.y + naruto.altura >= chao.y - spritePedras.altura)
+			if(!colidindo && naruto.x < obs.x + spritePedras.largura && naruto.x + naruto.largura >= obs.x && naruto.y + naruto.altura >= chao.y - spritePedras.altura)
 			{
-				estadoAtual = estados.perdeu
-				this.resetGame()
+				colidindo = true
+				setTimeout(function(){
+					colidindo = false
+				}, 500)
+				if(vidas > 0){
+					vidas--
+				}else{
+					estadoAtual = estados.perdeu
+					this.resetGame()
+				}
+				
 			}
 			else if( obs.x <= -spritePedras.largura )
 			{
