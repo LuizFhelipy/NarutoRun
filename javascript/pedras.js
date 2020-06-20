@@ -6,7 +6,7 @@ pedras = {
 	insere:function(){
 		this._obs.push({
 			x:LARGURA,
-			altura: Math.floor(Math.random()*(spritePedras.altura-30+1)+30)
+			altura: 100
 		})
 		this.tempoInsere=70+Math.floor(20 * Math.random())
 	},
@@ -69,7 +69,7 @@ pedras = {
 	desenha:function(){
 		for( var i=0, tam=this._obs.length; i<tam; i++ )
 		{
-			if(score.value > 10) spritePedras = new Sprite(8, 25, 200, 107, "img/tubarao.png")
+			if(score.value > 10) spritePedras = new Sprite(8, 25, 200, 107, "img/madara.png")
 
 			//cada objeto do array recebe uma sprite (desenha da pedra)
 			spritePedras.desenha( this._obs[i].x, chao.y - this._obs[i].altura )
